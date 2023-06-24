@@ -24,17 +24,7 @@ Student.prototype.getAverage = function () {
     return 0;
   }
 
-  let result = this.marks.reduce((acc, item, idx, arr) => {
-    acc += item;
-
-    if (idx === arr.length - 1) {
-      return acc / arr.length;
-    } else {
-      return acc;
-    }
-  }, 0);
-
-  return result;
+  return +(this.marks.reduce((a, b) => a + b) / this.marks.length).toFixed(1);
 }
 
 // Добавим метод, отчисляющий студента
