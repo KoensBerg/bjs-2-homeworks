@@ -27,9 +27,7 @@ class PrintEditionItem {
   }
 
   fix() {
-    if (this.state > 0 && this.state < 100) {
-      this.state *= 1.5;
-    }
+    this.state *= 1.5;
     if (this.state > 100) {
       this.state = 100;
     }
@@ -101,17 +99,11 @@ class Library {
   }
 
   giveBookByName(bookName) {
-    let searchingBook = this.books.find(item => item.name === bookName);
-    
-    if (searchingBook) {
-      let idx = this.books.indexOf(searchingBook);
-      delete this.books[idx];
-      this.books = this.books.filter(item => item);
+    let searchingBook = this.findBookBy('name', bookName);
+    if (!searchingBook) return null;
 
-      return searchingBook;
-    }
-
-    return null;
+    this.books = this.books.filter(item => item !== searchingBook);
+    return searchingBook;
   }
 }
 
