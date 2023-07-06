@@ -141,8 +141,8 @@ class Student {
 
   // вычислим среднюю успеваемость по всем предметам
   getAverage() {
-    let arrayOfSubjects = Object.keys(this.marks);
-    let arrayOfAverages = [];
+    const arrayOfSubjects = Object.keys(this.marks);
+    const arrayOfAverages = [];
     
     arrayOfSubjects.forEach(item => arrayOfAverages.push(this.marks[item].reduce((a, b) => a + b) / this.marks[item].length));
 
@@ -150,6 +150,6 @@ class Student {
       return 0;
     }
 
-    return arrayOfAverages.reduce((a, b) => a + b) / arrayOfAverages.length;
+    return +(arrayOfAverages.reduce((a, b) => a + b) / arrayOfAverages.length).toFixed(2);
   }
 }
