@@ -136,7 +136,7 @@ class Student {
       return 0;
     }
     
-    return +(this.marks[subjectName].reduce((a, b) => a + b) / this.marks[subjectName].length).toFixed(1);
+    return +(this.marks[subjectName].reduce((a, b) => a + b) / this.marks[subjectName].length).toFixed(2);
   }
 
   // вычислим среднюю успеваемость по всем предметам
