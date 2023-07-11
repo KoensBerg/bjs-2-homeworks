@@ -1,4 +1,8 @@
-﻿function parseCount(arg) {
+﻿// — — — — — — — — — — — — — — — — — — — — — — — —
+// Задание 1 - Форматтер чисел
+// — — — — — — — — — — — — — — — — — — — — — — — —
+
+function parseCount(arg) {
   let value = Number.parseFloat(arg);
 
   if (Number.isNaN(value)) {
@@ -15,6 +19,10 @@ function validateCount(arg) {
     return error;
   }
 }
+
+// — — — — — — — — — — — — — — — — — — — — — — — —
+// Задание 1 - Треугольник
+// — — — — — — — — — — — — — — — — — — — — — — — —
 
 class Triangle {
   constructor(a, b, c) {
